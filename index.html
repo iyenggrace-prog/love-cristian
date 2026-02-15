@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MI AMOR CRISTIAN</title>
+
+<style>
+body {
+margin:0;
+padding:0;
+overflow:hidden;
+font-family:Georgia, serif;
+background: radial-gradient(circle at center, #1e3c72, #0f2027, #8b0000);
+color:white;
+text-align:center;
+}
+  
+  /* stars */
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:twinkle 3s infinite alternate;
+}
+@keyframes twinkle{
+from{opacity:0.2;}
+to{opacity:1;}
+}
+  
+  .container{
+position:relative;
+top:50%;
+transform:translateY(-50%);
+padding:20px;
+}
+  
+  h1{
+font-size:40px;
+text-shadow:0 0 25px red;
+}
+
+/* Halaman */
+.page{
+  position:absolute;
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:pink;
+  z-index:5;
+}
+
+#page2{
+  display:none;
+  padding:20px;
+}
+
+/* Tombol */
+button{
+padding:14px 30px;
+border:none;
+border-radius:40px;
+background:linear-gradient(45deg,#8b0000,#1e3c72);
+color:pink;
+font-size:18px;
+cursor:pointer;
+box-shadow:0 0 25px red;
+}
+  
+/* Foto */
+img{
+  width:220px;
+  border-radius:20px;
+  margin-top:20px;
+  box-shadow:0 0 20px rgba(255,255,255,0.6);
+}
+
+/* Hati jatuh */
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:fall linear infinite;
+  z-index:1;
+}
+
+@keyframes fall{
+  0%{transform:translateY(-10vh);}
+  100%{transform:translateY(110vh);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN 1 -->
+<div class="page" id="page1">
+  <button onclick="openLove()">Open My Heart 💙</button>
+</div>
+  
+  
+  <div class="container">
+<h1>Happy Valentine's Day<br>Cristian Gamarra Leon</h1>
+
+
+<!-- HALAMAN 2 -->
+<div class="page" id="page2">
+  <h2 style="color:red;">Happy Valentine's Day 💘</h2>
+  <p>YOU ARE MY HAPPINES 🌹</p>
+  <p>you are my calm in chaos
+my light in darkness
+my safest place even from miles away
+
+distance means nothing
+when someone means everything
+
+cristian
+i choose you
+in every lifetime
+in every universe</p>
+  <p>EVERY MOMENT WITH YOU FEELS LIKE MAGIC ✨</p>
+  <p>TE AMO CON TODO MI CORAZON ❤️</p>
+  <p>FOREVER AND ALWAYS 💍</p>
+  
+
+  <!-- GANTI LINK FOTO -->
+  <a href="https://ibb.co.com/MxCt1m9L"><img src="https://i.ibb.co.com/XrCK5qVT/gracecute.jpg" alt="gracecute" border="0"></a>">
+</div>
+
+<!-- MUSIK -->
+<audio id="music">
+  <source src="https://files.catbox.moe/excfz5.mp4" type="audio/mp3">
+</audio>
+    
+<script>
+function openLove(){
+  document.getElementById("page1").style.display="none";
+  document.getElementById("page2").style.display="flex";
+  document.getElementById("music").play();
+}
+
+/* Efek hati jatuh */
+setInterval(function(){
+  var heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(Math.random()*3+2)+"s";
+  document.body.appendChild(heart);
+
+  setTimeout(function(){
+    heart.remove();
+  },5000);
+
+},400);
+ 
+/* stars */
+for(let s=0;s<120;s++){
+const star=document.createElement("div");
+star.classList.add("star");
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
